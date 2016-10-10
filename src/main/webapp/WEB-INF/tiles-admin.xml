@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- Admin Base Define -->
+	<definition name="admin.base.definition"
+		template="/WEB-INF/view/admin/layouts/adminclassic.jsp">
+		<put-attribute name="title" value="LowlSchool Admin Page" />
+		<put-attribute name="header"
+			value="/WEB-INF/view/admin/basefragments/_header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/view/admin/basefragments/_menu.jsp" />
+		<put-attribute name="sidebar"
+			value="/WEB-INF/view/admin/basefragments/_sidebar.jsp" />
+		<put-attribute name="maincontent" value="" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp">
+				<put-list-attribute name="pluginscripts">
+				</put-list-attribute>
+				<put-list-attribute name="inlinescripts">
+				</put-list-attribute>
+			</definition>
+		</put-attribute>
+	</definition>
+
+	<!-- Footer Define -->
+	<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+		name="scriptForForm">
+		<put-list-attribute name="pluginscripts">
+			<add-attribute value="/resources/Admin/assets/js/jquery-ui.custom.js" />
+			<add-attribute value="/resources/Admin/assets/js/jquery.ui.touch-punch.js" />
+			<add-attribute value="/resources/Admin/assets/js/chosen.jquery.js" />
+			<add-attribute value="/resources/Admin/assets/js/fuelux/fuelux.spinner.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/date-time/bootstrap-datepicker.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/date-time/bootstrap-timepicker.js" />
+			<add-attribute value="/resources/Admin/assets/js/date-time/moment.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/date-time/daterangepicker.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/date-time/bootstrap-datetimepicker.js" />
+			<add-attribute value="/resources/Admin/assets/js/bootstrap-colorpicker.js" />
+			<add-attribute value="/resources/Admin/assets/js/jquery.knob.js" />
+			<add-attribute value="/resources/Admin/assets/js/jquery.autosize.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/jquery.inputlimiter.1.3.1.js" />
+			<add-attribute value="/resources/Admin/assets/js/jquery.maskedinput.js" />
+			<add-attribute value="/resources/Admin/assets/js/bootstrap-tag.js" />
+		</put-list-attribute>
+		<put-list-attribute name="inlinescripts">
+			<add-attribute value="/resources/Admin/assets/js/form-ele.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Footer2 Define -->
+	<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+		name="scriptForTables">
+		<put-list-attribute name="pluginscripts">
+			<add-attribute
+				value="/resources/Admin/assets/js/dataTables/jquery.dataTables.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/dataTables/jquery.dataTables.bootstrap.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/dataTables/extensions/TableTools/js/dataTables.tableTools.js" />
+			<add-attribute
+				value="/resources/Admin/assets/js/dataTables/extensions/ColVis/js/dataTables.colVis.js" />
+		</put-list-attribute>
+		<put-list-attribute name="inlinescripts">
+			<add-attribute value="/resources/Admin/assets/js/ace-tables.js" />
+		</put-list-attribute>
+
+	</definition>
+	<!-- ////////////////////////////////Edit Admin Layout/////////////////////////////////////////////// -->
+
+	<!-- Admin Login Page -->
+	<definition name="adminLoginPage" template="/WEB-INF/view/admin/layouts/login.jsp">
+	</definition>
+
+	<!-- Admin Dashboard -->
+	<definition name="adminDashboard" extends="admin.base.definition">
+		<put-attribute name="title" value="Admin Home Page" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_home.jsp" />
+	</definition>
+
+	<!-- Admin Update Profile Page -->
+	<definition name="adminUpdateProfile" extends="admin.base.definition">
+		<put-attribute name="title" value="Update Profile" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_updateprofile.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+
+	</definition>
+
+	<!-- Admin Add User Page -->
+	<definition name="adminAddUser" extends="admin.base.definition">
+		<put-attribute name="title" value="Update User" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_adduser.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+
+	</definition>
+
+	<!-- Admin List Page -->
+	<definition name="userList" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_listUser.jsp" />
+		
+	</definition>
+
+	<!-- LIST SEMESTER -->
+	<definition name="adminListSem" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_listSemester.jsp" />
+	</definition>
+
+	<!-- ADD SEMESTER -->
+	<definition name="adminAddSem" extends="admin.base.definition">
+		<put-attribute name="title" value="Add Semester" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_addsemester.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+	</definition>
+
+	<!-- EDIT SEMESTER -->
+	<definition name="adminEditSem" extends="admin.base.definition">
+		<put-attribute name="title" value="Edit Semester" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_editsemester.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+	</definition>
+
+	<!-- DELETE SEMESTER -->
+	<definition name="adminDeleteSem" extends="admin.base.definition">
+		<put-attribute name="title" value="Confirm Delete Semester" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_deletesemester.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+	</definition>
+	<!--  ADD SUBJECT -->
+	<definition name="adminAddSubject" extends="admin.base.definition">
+		<put-attribute name="title" value="Add Subject" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_addsubject.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+	</definition>
+	<!--  EDIT SUBJECT -->
+	<definition name="adminEditSubject" extends="admin.base.definition">
+		<put-attribute name="title" value="Add Subject" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_editsubject.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+	</definition>
+	<!-- LIST SUBJECT -->
+	<definition name="adminListSubject" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_listsubject.jsp" />
+	</definition>
+	
+	<!-- VIEW SUBJECT -->
+	<definition name="adminViewSubject" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_viewsubject.jsp" />
+	</definition>
+	<!-- ADD CHAPTER -->
+	<definition name="adminAddChapterForSubject" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_addchapter.jsp" />
+	</definition>
+	<!-- EDIT CHAPTER -->
+	<definition name="adminEditChapter" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_editchapter.jsp" />
+	</definition>
+	<!-- LIST QUESTION -->
+	<definition name="adminListQuestion" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_listquestion.jsp" />
+	</definition>
+	<!-- ORGANIZE EXAMINATION -->
+	<definition name="adminOrginizeExamnination" extends="admin.base.definition">
+		<put-attribute name="title" value="ORGANIZE EXAMINATION" />
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_organizeexamination.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+	</definition>
+	<!-- LIST CLASS -->
+	<definition name="adminListClazz" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_listclazz.jsp" />
+	</definition>
+	<!-- Add Class -->
+	<definition name="adminAddClass" extends="admin.base.definition">
+		<put-attribute name="maincontent"
+			value="/WEB-INF/view/admin/bodyfragments/_addclass.jsp" />
+		<put-attribute name="footer">
+			<definition template="/WEB-INF/view/admin/basefragments/_footer.jsp"
+				extends="scriptForForm">
+			</definition>
+		</put-attribute>
+	</definition>
+</tiles-definitions>    

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- <definition name="menu" template="/WEB-INF/view/user/basefragments/_menu.jsp" 
+		preparer="com.example.tiles.MyMenuPreparer"> </definition> -->
+
+	<!-- ////////////////////////////Classic Template layout//////////////////////////////////////// -->
+
+	<!-- Base Define -->
+	<definition name="base.definition" template="/WEB-INF/view/user/layouts/classic.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/view/user/basefragments/_header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/view/user/basefragments/_menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/basefragments/_body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/view/user/basefragments/_footer.jsp" />
+	</definition>
+
+	<!-- Second Base Define -->
+	<definition name="second.base.definition" template="/WEB-INF/view/user/layouts/classic2.jsp">
+		<put-attribute name="title" value="Exam" />
+		<put-attribute name="header"
+			value="/WEB-INF/view/user/basefragments/_header2.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/view/user/basefragments/_menu2.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/basefragments/_body2.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/view/user/basefragments/_footer2.jsp" />
+	</definition>
+
+	<!-- All Question Page Define -->
+	<definition name="allQuestionPage"
+		template="/WEB-INF/view/user/layouts/_allquestion.jsp">
+	</definition>
+
+
+
+	<!-- //////////////////////////Edit Normal Page Layout/////////////////////////////////////// -->
+
+	<!-- Home Page -->
+	<definition name="homePage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_home site-exam" />
+		<put-attribute name="title" value="Home Page" />
+		<put-attribute name="menu"
+			value="/WEB-INF/view/user/basefragments/_menuhomepage.jsp" />
+	</definition>
+
+
+	<!-- Dashboard Page -->
+	<definition name="dashboardPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="My Dashboard" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_dashboard.jsp" />
+	</definition>
+
+	<!-- Account Page -->
+	<definition name="accountPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="My Profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_myaccount.jsp" />
+	</definition>
+
+	<!-- Edit Account Page -->
+	<definition name="editAccountPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="My Profile Edit" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_editaccount.jsp" />
+	</definition>
+
+	<!-- Change Password Page -->
+	<definition name="changePasswordPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Change Password" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_changepassword.jsp" />
+	</definition>
+
+	<!-- Exam Page -->
+	<definition name="examPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Exam" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_exam.jsp" />
+	</definition>
+	
+	<!-- Exam Page -->
+	<definition name="quizPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Quiz" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_quiz.jsp" />
+	</definition>
+
+	<!-- Add Exam Page -->
+	<definition name="addExamPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Add New Exam" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_addexam.jsp" />
+	</definition>
+
+	<!-- Exam Detail Page -->
+	<definition name="examDetailPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Exam Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_examdetail.jsp" />
+	</definition>
+	
+	<!-- Results Stats Page -->
+	<definition name="resultsStatsPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Results Stats" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_resultsstats.jsp" />
+	</definition>
+
+	<!-- Exam Setting Page -->
+	<definition name="examSettingPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Exam Setting" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_examsetting.jsp" />
+	</definition>
+
+	<!-- Exam Fail/Pass Page -->
+	<definition name="examFailPassPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Exam Fail Pass" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_examfailpass.jsp" />
+	</definition>
+
+	<!-- Exam Layout Setting Page -->
+	<definition name="examLayoutSettingPage" extends="base.definition">
+		<put-attribute name="bodyclass"
+			value="page_qsettings page_content page_qsettings" />
+		<put-attribute name="title" value="Exam Layout Setting" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_examlayoutsetting.jsp" />
+	</definition>
+
+	<!-- Add Question Page -->
+	<definition name="addQuestionPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Add Question" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_addquestion.jsp" />
+	</definition>
+
+	<!-- Edit Question Page -->
+	<definition name="editQuestionPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Edit Question" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_editquestion.jsp" />
+	</definition>
+
+	<!-- Add Multichoice Question Page -->
+	<definition name="addMultichoiceQuestionPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Add Multichoice Question" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_addmultichoicequestion.jsp" />
+	</definition>
+	
+	<!-- Edit Multichoice Question Page -->
+	<definition name="editMultichoiceQuestionPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Edit Multichoice Question" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_editmultichoicequestion.jsp" />
+	</definition>
+
+	<!-- Add Question With Media Page -->
+	<definition name="addMediaQuestionPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Add Question With Media" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_addquestionwithmedia.jsp" />
+	</definition>
+
+	<!-- Add Question With Free Text Page -->
+	<definition name="addQuestionFreeTextPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Add Question With Free Text" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_addquestionwithfreetext.jsp" />
+	</definition>
+
+	<!-- Question List Page -->
+	<definition name="questionListPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Question list" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_questionslist.jsp" />
+	</definition>
+	
+	<!-- Import Questions Page -->
+	<definition name="importQuestionsPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Import Questions" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_importquestions.jsp" />
+	</definition>
+
+	<!-- Register Class Page -->
+	<definition name="registerClassPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Register Class" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_registerclass.jsp" />
+	</definition>
+
+	<!-- Help Page -->
+	<definition name="helpPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Help" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_help.jsp" />
+	</definition>
+
+	<!-- Contact Page -->
+	<definition name="contactPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Contact" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_contact.jsp" />
+	</definition>
+
+	<!-- Features Page -->
+	<definition name="featuresPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_product" />
+		<put-attribute name="title" value="Features" />
+		<put-attribute name="menu"
+			value="/WEB-INF/view/user/basefragments/_menuhomepage.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_features.jsp" />
+	</definition>
+
+	<!-- Register Page -->
+	<definition name="registerPage" extends="base.definition">
+		<put-attribute name="bodyclass"
+			value="page_register page_content page_qsettings page-focus-form user_notloggedin" />
+		<put-attribute name="title" value="Register" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_register.jsp" />
+	</definition>
+
+	<!-- Login Page -->
+	<definition name="loginPage" extends="base.definition">
+		<put-attribute name="bodyclass"
+			value="page_login page-centered page_content page_qsettings page-focus-form user_notloggedin" />
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="menu"
+			value="/WEB-INF/view/user/basefragments/_menuhomepage.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_login.jsp" />
+	</definition>
+
+	<!-- Login Page -->
+	<definition name="logoutPage" extends="base.definition">
+		<put-attribute name="bodyclass"
+			value="page_login page-centered page_content page_qsettings page-focus-form user_notloggedin" />
+		<put-attribute name="title" value="Logout" />
+		<put-attribute name="menu"
+			value="/WEB-INF/view/user/basefragments/_menuhomepage.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_logout.jsp" />
+	</definition>
+
+	<!-- Terms Page -->
+	<definition name="termsPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content user_notloggedin" />
+		<put-attribute name="title" value="Terms" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_terms.jsp" />
+	</definition>
+
+	<!-- Courses Page -->
+	<definition name="coursesPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Courses" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_courses.jsp" />
+	</definition>
+
+	<!-- Class Detail Page -->
+	<definition name="classDetailPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content page_qsettings" />
+		<put-attribute name="title" value="Class Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_classdetail.jsp" />
+	</definition>
+
+	<!-- Not Found Page -->
+	<definition name="notFoundPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content" />
+		<put-attribute name="title" value="Not Found Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_notfound.jsp" />
+	</definition>
+
+	<!-- Access Denied Page -->
+	<definition name="accessDeniedPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content" />
+		<put-attribute name="title" value="Access Denied Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_accessdenied.jsp" />
+	</definition>
+	
+	<!-- Exam Warning Page -->
+	<definition name="examWarningPage" extends="base.definition">
+		<put-attribute name="bodyclass" value="page_content" />
+		<put-attribute name="title" value="Exam Warning Page" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_examwarning.jsp" />
+	</definition>
+
+	<!-- ////////////////////////////////Edit Exam Layout/////////////////////////////////////////////// -->
+
+	<!-- Start Exam Page -->
+	<definition name="startExamPage" extends="second.base.definition">
+		<put-attribute name="bodyclass"
+			value="page-single-col page_quizstart hasheader" />
+		<put-attribute name="title" value="Start Exam" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_startexam.jsp" />
+	</definition>
+
+	<!-- Exam Result Page -->
+	<definition name="examResultPage" extends="second.base.definition">
+		<put-attribute name="bodyclass" value="page_leaderboard hasheader" />
+		<put-attribute name="title" value="Exam Result" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_examresult.jsp" />
+	</definition>
+
+	<!-- Result Page -->
+	<definition name="resultPage" extends="second.base.definition">
+		<put-attribute name="bodyclass" value="page_leaderboard hasheader" />
+		<put-attribute name="title" value="Result" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_result.jsp" />
+	</definition>
+
+	<!-- Loading Quiz Page -->
+	<definition name="loadingQuizPage" extends="second.base.definition">
+		<put-attribute name="bodyclass"
+			value="page_countdown hasprogress hasheader" />
+		<put-attribute name="title" value="Loading" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_loading.jsp" />
+	</definition>
+
+	<!-- Media Question Page -->
+	<definition name="mediaQuestionPage" extends="second.base.definition">
+		<put-attribute name="bodyclass"
+			value="page_question hasprogress hasheader" />
+	</definition>
+
+	<!-- Normal Question Page -->
+	<definition name="normalQuestionPage" extends="second.base.definition">
+		<put-attribute name="bodyclass"
+			value="page_question hasprogress hasheader" />
+		<put-attribute name="title" value="Question" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_normalquestion.jsp" />
+	</definition>
+
+
+	<!-- Multichoice Question Page -->
+	<definition name="multichoiceQuestionPage" extends="second.base.definition">
+		<put-attribute name="bodyclass"
+			value="page_question hasprogress hasheader" />
+		<put-attribute name="title" value="Question" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/user/bodyfragments/_multichoicequestion.jsp" />
+	</definition>
+
+
+</tiles-definitions> 

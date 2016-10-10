@@ -1,0 +1,18 @@
+normal question : 1
+media-question : 4
+multichoice : 2
+free text : 3
+
+
+
+
+
+
+0: false;
+1: truel
+2: exam
+
+
+
+
+Role_Teacher

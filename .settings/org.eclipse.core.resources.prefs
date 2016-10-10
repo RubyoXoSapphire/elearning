@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/softech/elearning/data/domain/Semester.java=UTF-8
+encoding//src/main/java/com/softech/elearning/presentation/controllers/HomeController.java=UTF-8
+encoding//src/main/java/com/softech/elearning/presentation/dto/ObjectAjaxResponse.java=UTF-8
+encoding//src/main/webapp/WEB-INF/view/admin/basefragments/_maincontent.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/user/basefragments/_header.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/user/layouts/_allquestion.jsp=UTF-8

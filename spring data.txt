@@ -1,0 +1,96 @@
+-------First, if we are writing a query that should return only one result, we can return the following types:
+	+ Basic type. Our query method will return the found basic type or null.
+	+ Entity. Our query method will return an entity object or null.
+	+ Guava / Java 8 Optional<T>. Our query method will return an Optional that contains the found object or an empty Optional.
+
+
+	interface TodoRepository extends Repository<Todo, Long> { 
+ 
+    		@Query("SELECT t.title FROM Todo t where t.id = :id") 
+    		String findTitleById(@Param("id") Long id);
+    	 
+    		@Query("SELECT t.title FROM Todo t where t.id = :id") 
+    		Optional<String> findTitleById(@Param("id") Long id);
+ 
+    		Todo findById(Long id);
+     
+   	 	Optional<Todo> findById(Long id);
+	}
+
+
+
+
+
+--------Third, if we want that our query method is executed asynchronously, we have to annotate it with the @Async annotation and return a Future<T> object. Here are some examples of query methods that are executed asynchronously:
+	@Async
+        Future<Todo> findById(Long id);
+
+	@Async
+    	Future<List<Todo>> findByTitle(String title);
+
+
+
+---------named parameters:
+	@Query("SELECT t FROM Todo t where t.title = :title AND t.description = :description")
+    	public Optional<Todo> findByTitleAndDescription(@Param("title") String title, 
+                                                    @Param("description") String description);
+     
+   	 @Query(
+      	  value = "SELECT * FROM todos t where t.title = :title AND t.description = :description", 
+      	  nativeQuery=true
+   	 )
+   	 public Optional<Todo> findByTitleAndDescription(@Param("title") String title, 
+                                                    @Param("description") String description);
+
+
+---------parameter binding :
+	@Query("SELECT t FROM Todo t where t.title = ?1 AND t.description = ?2")
+    	public Optional<Todo> findByTitleAndDescription(String title, String description);
+     
+    	@Query(value = "SELECT * FROM todos t where t.title = ?0 AND t.description = ?1", 
+        nativeQuery=true
+    	)
+    	public Optional<Todo> findByTitleAndDescription(String title, String description);
+
+
+
+
+---------We can create query methods that use this strategy by following these rules:
+
+	The name of our query method must start with one of the following prefixes: find…By, read…By, query…By, count…By, and get…By.
+	If we want to limit the number of returned query results, we can add the First or the Top keyword before the first By word. If we want to get more than one result, we have to append the optional numeric value to the First and the Top keywords. For example, findTopBy, findTop1By, findFirstBy, and findFirst1By all return the first entity that matches with the specified search criteria.
+	If we want to select unique results, we have to add the Distinct keyword before the first By word. For example, findTitleDistinctBy or findDistinctTitleBy means that we want to select all unique titles that are found from the database.
+	We must add the search criteria of our query method after the first By word. We can specify the search criteria by combining property expressions with the supported keywords.
+	If our query method specifies x search conditions, we must add x method parameters to it. In other words, the number of method parameters must be equal than the number of search conditions. Also, the method parameters must be given in the same order than the search conditions.
+	We must set the return type of the query method by following the rules that were described in the previous part of this tutorial.
+
+
+--------"Or" keyword
+	public List<Todo> findByTitleOrDescription(String title, String description);
+
+--------"Count" keyword
+	 public long countByTitle(String title);
+
+--------"Distinct" keyword
+	public List<Todo> findDistinctByTitle(String title);
+
+--------"Between" keyword
+	public List<Todo> findBetween(value1,value2);
+
+--------"OrderBy" keyword, "First" or "Top" keyword
+	public List<Todo> findFirst3ByTitleOrderByTitleAsc(String title);
+	public List<Todo> findTop3ByTitleOrderByTitleAsc(String title);
+ 
+--------"AllIgnoreCase" keyword
+	public List<DeviceType> findByNameAllIgnoreCase(String name);
+
+--------Pageable for spring
+	Page<Todo> findAll(Pageable pageRequest);
+
+
+	@Transactional(readOnly = true)
+    	@Override
+    	public List<TodoDTO> findBySearchTerm(String searchTerm, Pageable pageRequest) {
+        	Page<Todo> searchResultPage = repository.findAll(pageRequest);
+        	return searchResultPage.toList();
+    }
